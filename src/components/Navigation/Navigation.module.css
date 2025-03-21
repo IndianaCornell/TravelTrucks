@@ -1,0 +1,51 @@
+.header {
+  border-bottom: 1px solid rgba(242, 244, 247, 1);
+}
+
+.container {
+  width: 1342px;
+  max-width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.headerHomeBackground {
+  background: rgba(247, 247, 247, 1);
+}
+
+.navigation {
+  display: flex;
+  padding: 24px 0;
+}
+
+.navigationLogo {
+  margin-right: 450px;
+
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 1.5;
+  font-style: bold;
+}
+
+.navigationLogoSpan {
+  color: rgba(71, 84, 103, 1);
+}
+
+.navigationList {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.navigationLink {
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0%;
+}
+
+.active {
+  color: rgba(216, 67, 67, 1);
+}

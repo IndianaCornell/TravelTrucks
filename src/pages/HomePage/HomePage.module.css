@@ -1,0 +1,63 @@
+.hero {
+  height: calc(100vh - 81px);
+  display: flex;
+  align-items: center;
+  background-image: url(../../images/herobackground.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.container {
+  width: 1342px;
+  max-width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.heroHeader {
+  margin-bottom: 16px;
+
+  font-family: Inter;
+  color: rgba(247, 247, 247, 1);
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 0.66;
+  letter-spacing: 0%;
+}
+
+.heroDescription {
+  margin-bottom: 40px;
+
+  font-family: Inter;
+  color: rgba(247, 247, 247, 1);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  letter-spacing: 0%;
+}
+
+.heroLink {
+  display: inline-block;
+  padding: 12px 24px;
+
+  width: 173px;
+
+  background-color: rgba(228, 72, 72, 1);
+  color: #fff;
+  text-align: center;
+  border-radius: 200px;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out;
+
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.5%;
+  vertical-align: middle;
+}
+
+.heroLink:hover {
+  background-color: rgba(216, 67, 67, 1);
+}
