@@ -1,0 +1,78 @@
+.feedbackFormContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 44px 57px;
+
+  border: 1px solid rgba(218, 221, 225, 1);
+  border-radius: 10px;
+
+  width: 50%;
+}
+
+.feedbackFormHeader {
+  margin-bottom: 8px;
+
+  font-family: Inter;
+  color: rgba(16, 24, 40, 1);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0%;
+}
+
+.feedbackFormDescription {
+  margin-bottom: 24px;
+
+  font-family: Inter;
+  color: rgba(108, 113, 123, 1);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+}
+
+.feedbackForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.feedbackFormInput {
+  background-color: rgba(247, 247, 247, 1);
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.feedbackFormComment {
+  min-height: 118px;
+
+  background-color: rgba(247, 247, 247, 1);
+  border-radius: 12px;
+  padding: 18px;
+
+  resize: none;
+  overflow: hidden;
+}
+
+.feedbackFormButton {
+  margin: 24px auto 0 auto;
+
+  display: inline-block;
+  padding: 16px 40px;
+
+  width: 166px;
+
+  background-color: rgba(228, 72, 72, 1);
+  color: #fff;
+  text-align: center;
+  border-radius: 200px;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out;
+
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.5%;
+  vertical-align: middle;
+}

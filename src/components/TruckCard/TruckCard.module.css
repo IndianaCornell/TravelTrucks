@@ -1,0 +1,64 @@
+.truckCard {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.truckCardHeaderWrapper {
+}
+
+.truckCardHeader {
+  margin-bottom: 8px;
+
+  font-family: Inter;
+  color: rgba(16, 24, 40, 1);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0%;
+}
+
+.truckCardReviews {
+  margin-bottom: 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  font-family: Inter;
+  color: rgba(16, 24, 40, 1);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+}
+
+.truckCardReviewsSpan {
+  margin-left: 16px;
+}
+
+.truckCardPrice {
+  font-family: Inter;
+  color: rgba(16, 24, 40, 1);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0%;
+}
+
+.truckCardEquipmentList {
+  display: flex;
+  gap: 48px;
+}
+
+.truckCardEquipmentItem {
+}
+
+.truckCardDescription {
+  font-family: Inter;
+  color: rgba(71, 84, 103, 1);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+}
