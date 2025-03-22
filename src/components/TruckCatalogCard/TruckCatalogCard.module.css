@@ -15,6 +15,10 @@
   margin-bottom: 8px;
 }
 
+.truckCardImage {
+  width: 320px;
+}
+
 .truckCardHeader {
   font-family: Inter;
   color: rgba(16, 24, 40, 1);

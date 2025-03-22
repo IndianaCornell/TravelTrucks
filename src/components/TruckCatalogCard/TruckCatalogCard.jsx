@@ -6,13 +6,18 @@ import css from "./TruckCatalogCard.module.css";
 
 import { Star, Map } from "../../assets/icons";
 
-const TruckCatalogCard = () => {
+const TruckCatalogCard = ({ truck }) => {
+  console.log(truck);
   return (
     <div className={clsx(css.truckCard)}>
-      <img src={carImage} alt="car" />
+      <img
+        className={clsx(css.truckCardImage)}
+        src={truck.gallery[0].original}
+        alt="car"
+      />
       <div className={clsx(css.truckCardWrapper)}>
         <div className={clsx(css.truckCardHeaderWrapper)}>
-          <h3 className={clsx(css.truckCardHeader)}>Mavericks</h3>
+          <h3 className={clsx(css.truckCardHeader)}>{truck.name}</h3>
           <h3 className={clsx(css.truckCardPrice)}>€8000.00</h3>
         </div>
         <p className={clsx(css.truckCardReviews)}>
