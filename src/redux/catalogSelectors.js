@@ -7,6 +7,11 @@ export const selectTrucks = createSelector(
   (catalog) => catalog.items
 );
 
+export const selectTruck = createSelector(
+  [selectCatalog],
+  (catalog) => catalog.item
+);
+
 export const selectLoading = createSelector(
   [selectCatalog],
   (catalog) => catalog.isLoading

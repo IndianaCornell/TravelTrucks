@@ -3,6 +3,7 @@ import { getCatalog, getTruck } from "./truckOperations";
 
 const initialState = {
   items: [],
+  item: [],
   isLoading: false,
   error: null,
   filters: {
@@ -20,10 +21,17 @@ const handlePending = (state) => {
   state.isLoading = true;
 };
 
-const handleFulfilled = (state, action) => {
+const handleFulfilledItems = (state, action) => {
   state.isLoading = false;
   state.error = null;
   state.items = action.payload;
+  state.item = [];
+};
+
+const handleFulfilledItem = (state, action) => {
+  state.isLoading = false;
+  state.error = null;
+  state.item = action.payload;
 };
 
 const handleRejected = (state, action) => {
@@ -40,10 +48,10 @@ const slice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getCatalog.pending, handlePending)
-      .addCase(getCatalog.fulfilled, handleFulfilled)
+      .addCase(getCatalog.fulfilled, handleFulfilledItems)
       .addCase(getCatalog.rejected, handleRejected)
       .addCase(getTruck.pending, handlePending)
-      .addCase(getTruck.fulfilled, handleFulfilled)
+      .addCase(getTruck.fulfilled, handleFulfilledItem)
       .addCase(getTruck.rejected, handleRejected);
   },
 });
