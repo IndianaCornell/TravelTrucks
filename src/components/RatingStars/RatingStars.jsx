@@ -10,7 +10,7 @@ const RatingStars = ({ rating }) => {
         <li key={index} className={css.reviewsAuthorRatingItem}>
           <img
             src={index < roundedRating ? Star : StarEmpty}
-            alt="Rating star"
+            alt="Rating stars"
           />
         </li>
       ))}
