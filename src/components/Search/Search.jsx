@@ -39,7 +39,13 @@ const Search = ({ onSearch }) => {
         equipment: [],
         vehicleType: "",
       }}
-      onSubmit={handleSubmit}
+      onSubmit={(values) => {
+        const cleanedQuery = values.query.replace(/\s+/g, "");
+        handleSubmit({
+          ...values,
+          query: cleanedQuery,
+        });
+      }}
     >
       {({ values }) => (
         <Form className={clsx(css.searchForm)}>
