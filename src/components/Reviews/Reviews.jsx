@@ -3,10 +3,11 @@ import React from "react";
 import { useOutletContext } from "react-router-dom";
 
 import css from "./Reviews.module.css";
+
 import RatingStars from "../RatingStars/RatingStars";
 
 const Reviews = () => {
-  const { truck, isLoading, error } = useOutletContext();
+  const { truck } = useOutletContext();
 
   return (
     <ul className={clsx(css.reviewsList)}>

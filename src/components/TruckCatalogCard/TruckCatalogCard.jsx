@@ -1,10 +1,11 @@
 import React from "react";
 import clsx from "clsx";
+import { Link } from "react-router-dom";
 
 import css from "./TruckCatalogCard.module.css";
 
 import { Star, Map, Heart } from "../../assets/icons";
-import { Link } from "react-router-dom";
+
 import TruckFilterItem from "../TruckFilterItem/TruckFilterItem";
 
 const TruckCatalogCard = ({ truck }) => {

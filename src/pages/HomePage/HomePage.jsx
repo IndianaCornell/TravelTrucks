@@ -1,8 +1,8 @@
 import clsx from "clsx";
 import React from "react";
+import { Link } from "react-router-dom";
 
 import css from "./HomePage.module.css";
-import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (

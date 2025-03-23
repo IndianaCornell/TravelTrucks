@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { NavLink, Outlet, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import clsx from "clsx";
 
 import css from "./TruckPage.module.css";
 
 import TruckCard from "../../components/TruckCard/TruckCard";
 import FeedbackForm from "../../components/FeedbackForm/FeedbackForm";
-import { useDispatch, useSelector } from "react-redux";
+
 import {
   selectError,
   selectLoading,
@@ -20,6 +21,7 @@ const buildLinkClass = ({ isActive }) => {
 
 const TruckPage = () => {
   const dispatch = useDispatch();
+
   const isLoading = useSelector(selectLoading);
   const error = useSelector(selectError);
   const params = useParams();
@@ -28,8 +30,6 @@ const TruckPage = () => {
   useEffect(() => {
     dispatch(getTruck(params.id));
   }, [dispatch]);
-
-  console.log(truck);
 
   return (
     <section className={clsx(css.container)}>

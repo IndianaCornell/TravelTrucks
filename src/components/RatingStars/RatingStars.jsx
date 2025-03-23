@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import { StarEmpty, Star } from "../../assets/icons";
 
 import css from "./RatingStars.module.css";

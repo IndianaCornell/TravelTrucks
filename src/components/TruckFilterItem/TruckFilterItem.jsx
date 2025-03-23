@@ -1,6 +1,8 @@
 import React from "react";
 import clsx from "clsx";
 
+import css from "./TruckFilterItem.module.css";
+
 import {
   Alcove,
   Automatic,
@@ -18,8 +20,6 @@ import {
   Water,
   Map,
 } from "../../assets/icons";
-
-import css from "./TruckFilterItem.module.css";
 
 const iconsMap = {
   Alcove,

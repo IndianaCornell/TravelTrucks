@@ -26,6 +26,11 @@ const handleFulfilledItems = (state, action) => {
   state.error = null;
   state.items = action.payload;
   state.item = [];
+  state.filters = {
+    query: "",
+    equipment: [],
+    vehicleType: [],
+  };
 };
 
 const handleFulfilledItem = (state, action) => {

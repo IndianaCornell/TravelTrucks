@@ -1,8 +1,9 @@
 import clsx from "clsx";
 import React from "react";
+import { useOutletContext } from "react-router-dom";
 
 import css from "./Features.module.css";
-import { useOutletContext } from "react-router-dom";
+
 import TruckFilterItem from "../TruckFilterItem/TruckFilterItem";
 
 const Features = () => {

@@ -1,10 +1,14 @@
+import { ProgressBar } from "react-loader-spinner";
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import clsx from "clsx";
 
 import css from "./TrucksList.module.css";
 
+import filteredTrucks from "../../utils/filter";
+
 import TruckCatalogCard from "../TruckCatalogCard/TruckCatalogCard";
-import { useDispatch, useSelector } from "react-redux";
+
 import {
   selectTrucks,
   selectLoading,
@@ -29,38 +33,15 @@ const TrucksList = () => {
     setVisibleCount((prev) => prev + 4);
   };
 
-  const filteredTrucks = (trucks?.items || []).filter((truck) => {
-    if (
-      filters.query &&
-      !truck.location.toLowerCase().includes(filters.query.toLowerCase())
-    ) {
-      return false;
-    }
-
-    if (
-      filters.vehicleType.length > 0 &&
-      !filters.vehicleType.includes(truck.form)
-    ) {
-      return false;
-    }
-
-    if (
-      filters.equipment.length > 0 &&
-      !filters.equipment.every((eq) => truck[eq] === true)
-    ) {
-      return false;
-    }
-
-    return true;
-  });
+  const filtered = filteredTrucks(trucks, filters);
 
   return (
     <div className={clsx(css.truckListWrapper)}>
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <ProgressBar />}
       {error && <p>Error: {error}</p>}
       <ul className={clsx(css.truckList)}>
-        {Array.isArray(trucks?.items) && filteredTrucks.length > 0 ? (
-          filteredTrucks.slice(0, visibleCount).map((truck) => (
+        {Array.isArray(trucks?.items) && filtered.length > 0 ? (
+          filtered.slice(0, visibleCount).map((truck) => (
             <li key={truck.id}>
               <TruckCatalogCard truck={truck} />
             </li>
@@ -69,7 +50,7 @@ const TrucksList = () => {
           <p>No trucks found</p>
         )}
       </ul>
-      {trucks?.items && visibleCount < filteredTrucks.length && (
+      {trucks?.items && visibleCount < filtered.length && (
         <button className={clsx(css.truckListLoadMoreBtn)} onClick={loadMore}>
           Load More
         </button>

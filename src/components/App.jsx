@@ -1,7 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import clsx from "clsx";
-
-import css from "./App.module.css";
 
 import Navigation from "./Navigation/Navigation";
 import Reviews from "./Reviews/Reviews";
@@ -13,7 +10,7 @@ import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 
 function App() {
   return (
-    <div className={clsx(css.container)}>
+    <div>
       <Navigation />
       <Routes>
         <Route path="/" element={<HomePage />} />

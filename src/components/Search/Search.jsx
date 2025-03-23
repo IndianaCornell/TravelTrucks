@@ -1,7 +1,7 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Formik, Form, Field } from "formik";
 import clsx from "clsx";
-import { useDispatch } from "react-redux";
 
 import css from "./Search.module.css";
 
@@ -22,6 +22,7 @@ import {
   Water,
   Map,
 } from "../../assets/icons";
+
 import { updateFilters } from "../../redux/catalogSlice";
 
 const Search = ({ onSearch }) => {
@@ -36,7 +37,7 @@ const Search = ({ onSearch }) => {
       initialValues={{
         query: "",
         equipment: [],
-        vehicleType: [],
+        vehicleType: "",
       }}
       onSubmit={handleSubmit}
     >
@@ -211,7 +212,7 @@ const Search = ({ onSearch }) => {
                     className={clsx(css.searchFiltersCheckBox)}
                     type="checkbox"
                     name="equipment"
-                    value="alcove"
+                    value="water"
                   />
                   <div className={clsx(css.filterIconWrapper)}>
                     <img src={Water} alt="Water Icon" width="32" />
@@ -231,7 +232,7 @@ const Search = ({ onSearch }) => {
                 <label>
                   <Field
                     className={clsx(css.searchFiltersCheckBox)}
-                    type="checkbox"
+                    type="radio"
                     name="vehicleType"
                     value="van"
                   />
@@ -244,7 +245,7 @@ const Search = ({ onSearch }) => {
                 <label>
                   <Field
                     className={clsx(css.searchFiltersCheckBox)}
-                    type="checkbox"
+                    type="radio"
                     name="vehicleType"
                     value="fullyIntegrated"
                   />
@@ -259,7 +260,7 @@ const Search = ({ onSearch }) => {
                 <label>
                   <Field
                     className={clsx(css.searchFiltersCheckBox)}
-                    type="checkbox"
+                    type="radio"
                     name="vehicleType"
                     value="alcove"
                   />

@@ -1,0 +1,10 @@
+.notFoundPageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 81px);
+  text-align: center;
+}
+
+.notFoundPageTitle {
+}
