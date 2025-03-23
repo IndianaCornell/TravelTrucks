@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 import TruckFilterItem from "../TruckFilterItem/TruckFilterItem";
 
 const TruckCatalogCard = ({ truck }) => {
-  console.log(truck);
   return (
     <div className={clsx(css.truckCard)}>
       <img

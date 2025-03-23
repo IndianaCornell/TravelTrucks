@@ -1,8 +1,9 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
+import clsx from "clsx";
+import { useDispatch } from "react-redux";
 
 import css from "./Search.module.css";
-import clsx from "clsx";
 
 import {
   Alcove,
@@ -21,11 +22,13 @@ import {
   Water,
   Map,
 } from "../../assets/icons";
+import { updateFilters } from "../../redux/catalogSlice";
 
 const Search = ({ onSearch }) => {
-  const handleSubmit = (values, actions) => {
-    console.log(values);
-    actions.resetForm();
+  const dispatch = useDispatch();
+
+  const handleSubmit = (values) => {
+    dispatch(updateFilters(values));
   };
 
   return (
@@ -79,7 +82,7 @@ const Search = ({ onSearch }) => {
                     className={clsx(css.searchFiltersCheckBox)}
                     type="checkbox"
                     name="equipment"
-                    value="Automatic"
+                    value="automatic"
                   />
                   <div className={clsx(css.filterIconWrapper)}>
                     <img src={Automatic} alt="AC Icon" width="32" />
@@ -94,7 +97,7 @@ const Search = ({ onSearch }) => {
                     className={clsx(css.searchFiltersCheckBox)}
                     type="checkbox"
                     name="equipment"
-                    value="Kitchen"
+                    value="kitchen"
                   />
                   <div className={clsx(css.filterIconWrapper)}>
                     <img src={Kitchen} alt="AC Icon" width="32" />
@@ -121,7 +124,7 @@ const Search = ({ onSearch }) => {
                     className={clsx(css.searchFiltersCheckBox)}
                     type="checkbox"
                     name="equipment"
-                    value="Bathroom"
+                    value="bathroom"
                   />
                   <div className={clsx(css.filterIconWrapper)}>
                     <img src={Bathroom} alt="AC Icon" width="32" />
@@ -136,7 +139,7 @@ const Search = ({ onSearch }) => {
                     className={clsx(css.searchFiltersCheckBox)}
                     type="checkbox"
                     name="equipment"
-                    value="Gas"
+                    value="gas"
                   />
                   <div className={clsx(css.filterIconWrapper)}>
                     <img src={Gas} alt="Gas Icon" width="32" />
@@ -148,7 +151,7 @@ const Search = ({ onSearch }) => {
                     className={clsx(css.searchFiltersCheckBox)}
                     type="checkbox"
                     name="equipment"
-                    value="Microwave"
+                    value="microwave"
                   />
                   <div className={clsx(css.filterIconWrapper)}>
                     <img src={Microwave} alt="Microwave Icon" width="32" />
@@ -162,7 +165,7 @@ const Search = ({ onSearch }) => {
                     className={clsx(css.searchFiltersCheckBox)}
                     type="checkbox"
                     name="equipment"
-                    value="Petrol"
+                    value="petrol"
                   />
                   <div className={clsx(css.filterIconWrapper)}>
                     <img src={Petrol} alt="Petrol Icon" width="32" />
@@ -176,7 +179,7 @@ const Search = ({ onSearch }) => {
                     className={clsx(css.searchFiltersCheckBox)}
                     type="checkbox"
                     name="equipment"
-                    value="Radio"
+                    value="radio"
                   />
                   <div className={clsx(css.filterIconWrapper)}>
                     <img src={Radio} alt="AC Icon" width="32" />
@@ -190,7 +193,7 @@ const Search = ({ onSearch }) => {
                     className={clsx(css.searchFiltersCheckBox)}
                     type="checkbox"
                     name="equipment"
-                    value="Refrigerator"
+                    value="refrigerator"
                   />
                   <div className={clsx(css.filterIconWrapper)}>
                     <img
@@ -208,7 +211,7 @@ const Search = ({ onSearch }) => {
                     className={clsx(css.searchFiltersCheckBox)}
                     type="checkbox"
                     name="equipment"
-                    value="Alcove"
+                    value="alcove"
                   />
                   <div className={clsx(css.filterIconWrapper)}>
                     <img src={Water} alt="Water Icon" width="32" />
@@ -230,7 +233,7 @@ const Search = ({ onSearch }) => {
                     className={clsx(css.searchFiltersCheckBox)}
                     type="checkbox"
                     name="vehicleType"
-                    value="Van"
+                    value="van"
                   />
                   <div className={clsx(css.filterIconWrapper)}>
                     <img src={VAN} alt="AC Icon" width="32" />
@@ -243,7 +246,7 @@ const Search = ({ onSearch }) => {
                     className={clsx(css.searchFiltersCheckBox)}
                     type="checkbox"
                     name="vehicleType"
-                    value="FullyIntegrated"
+                    value="fullyIntegrated"
                   />
                   <div className={clsx(css.filterIconWrapper)}>
                     <img src={FullyIntegrated} alt="AC Icon" width="32" />
@@ -258,7 +261,7 @@ const Search = ({ onSearch }) => {
                     className={clsx(css.searchFiltersCheckBox)}
                     type="checkbox"
                     name="vehicleType"
-                    value="Alcove"
+                    value="alcove"
                   />
                   <div className={clsx(css.filterIconWrapper)}>
                     <img src={Alcove} alt="AC Icon" width="32" />

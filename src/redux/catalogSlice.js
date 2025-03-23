@@ -5,6 +5,15 @@ const initialState = {
   items: [],
   isLoading: false,
   error: null,
+  filters: {
+    query: "",
+    equipment: [],
+    vehicleType: [],
+  },
+};
+
+const setFilters = (state, action) => {
+  state.filters = action.payload;
 };
 
 const handlePending = (state) => {
@@ -24,6 +33,9 @@ const handleRejected = (state, action) => {
 
 const slice = createSlice({
   name: "catalog",
+  reducers: {
+    updateFilters: setFilters,
+  },
   initialState,
   extraReducers: (builder) => {
     builder
@@ -37,3 +49,4 @@ const slice = createSlice({
 });
 
 export const catalogReducer = slice.reducer;
+export const { updateFilters } = slice.actions;
