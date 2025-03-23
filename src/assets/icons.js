@@ -5,7 +5,7 @@ import Bathroom from "./Bathroom.svg";
 import FullyIntegrated from "./FullyIntegrated.svg";
 import Kitchen from "./Kitchen.svg";
 import TV from "./TV.svg";
-import VAN from "./VAN.svg";
+import VAN from "./Van.svg";
 import Star from "./Star.svg";
 import Map from "./Map.svg";
 import Gas from "./Gas.svg";
