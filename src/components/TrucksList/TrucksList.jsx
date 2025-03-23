@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 
 import css from "./TrucksList.module.css";
@@ -10,9 +10,11 @@ import {
   selectLoading,
   selectError,
 } from "../../redux/catalogSelectors";
-import { getCatalog } from "../../redux/catalogOperations";
+import { getCatalog } from "../../redux/truckOperations";
 
 const TrucksList = () => {
+  const [visibleCount, setVisibleCount] = useState(4);
+
   const dispatch = useDispatch();
   const trucks = useSelector(selectTrucks);
   const isLoading = useSelector(selectLoading);
@@ -22,22 +24,30 @@ const TrucksList = () => {
     dispatch(getCatalog());
   }, [dispatch]);
 
+  const loadMore = () => {
+    setVisibleCount((prev) => prev + 4);
+  };
+
   return (
     <div className={clsx(css.truckListWrapper)}>
       {isLoading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
       <ul className={clsx(css.truckList)}>
         {trucks.total > 0 ? (
-          trucks.items.map((truck) => (
+          trucks.items.slice(0, visibleCount).map((truck) => (
             <li key={truck.id}>
               <TruckCatalogCard truck={truck} />
             </li>
           ))
         ) : (
-          <> No trucks available</>
+          <> </>
         )}
       </ul>
-      <button className={clsx(css.truckListLoadMoreBtn)}>Load More</button>
+      {trucks?.items && visibleCount < trucks.items.length && (
+        <button className={clsx(css.truckListLoadMoreBtn)} onClick={loadMore}>
+          Load More
+        </button>
+      )}
     </div>
   );
 };

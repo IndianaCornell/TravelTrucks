@@ -1,40 +1,65 @@
 import React from "react";
 import clsx from "clsx";
 
-import carImage from "../../assets/car.png";
 import css from "./TruckCatalogCard.module.css";
 
-import { Star, Map } from "../../assets/icons";
+import { Star, Map, Heart } from "../../assets/icons";
+import { Link } from "react-router-dom";
+import TruckFilterItem from "../TruckFilterItem/TruckFilterItem";
 
 const TruckCatalogCard = ({ truck }) => {
   console.log(truck);
   return (
     <div className={clsx(css.truckCard)}>
       <img
-        className={clsx(css.truckCardImage)}
+        width="320px"
+        className={clsx(css.truckImage)}
         src={truck.gallery[0].original}
         alt="car"
       />
       <div className={clsx(css.truckCardWrapper)}>
         <div className={clsx(css.truckCardHeaderWrapper)}>
           <h3 className={clsx(css.truckCardHeader)}>{truck.name}</h3>
-          <h3 className={clsx(css.truckCardPrice)}>€8000.00</h3>
+          <div className={clsx(css.truckPriceWrapper)}>
+            <h3 className={clsx(css.truckCardPrice)}>€{truck.price}</h3>
+            <button className={clsx(css.truckHeartButton)}>
+              <img
+                className={clsx(css.truckHeartIcon)}
+                src={Heart}
+                alt="Heart Icon"
+                width="24"
+              />
+            </button>
+          </div>
         </div>
         <p className={clsx(css.truckCardReviews)}>
           <span>
             <img src={Star} alt="AC Icon" width="16" />
           </span>
-          4.4(2 Reviews)
+          {truck.rating}({truck.reviews.length} Reviews)
           <span className={clsx(css.truckCardReviewsSpan)}>
             <img src={Map} alt="AC Icon" width="16" />
           </span>
-          Kyiv, Ukraine
+          {truck.location}
         </p>
         <p className={clsx(css.truckCardDescription)}>
-          Embrace simplicity and freedom with the Mavericks panel truck...
+          {truck.description.substring(0, 200) + "..."}
         </p>
-        <ul className={clsx(css.truckCardEquipmentList)}></ul>
-        <button className={clsx(css.truckCardShowMoreButton)}>Show More</button>
+        <ul className={clsx(css.truckCardEquipmentList)}>
+          {Object.entries(truck)
+            .filter(([key, value]) => typeof value === "boolean" && value)
+            .map(([key]) => (
+              <li key={key} className={clsx(css.truckCardEquipmentItem)}>
+                <TruckFilterItem filter={key} />
+              </li>
+            ))}
+        </ul>
+        <Link
+          to={`${truck.id}/features`}
+          className={clsx(css.truckCardShowMoreButton)}
+        >
+          Show More
+        </Link>
       </div>
     </div>
   );

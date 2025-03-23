@@ -2,24 +2,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-grow: 1;
+  max-width: 888px;
 }
 
 .truckList {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
   margin-bottom: 40px;
 }
 
 .truckListLoadMoreBtn {
   display: inline-block;
   padding: 12px 24px;
-
+  cursor: pointer;
   width: 166px;
-
   color: rgba(16, 24, 40, 1);
   text-align: center;
   border: 1px solid rgba(218, 221, 225, 1);
   border-radius: 200px;
   text-decoration: none;
-  transition: background 0.3s ease-in-out;
+  transition: border 0.3s ease-in-out, background 0.3s ease-in-out;
 
   font-family: Inter;
   font-weight: 500;
@@ -27,4 +32,11 @@
   line-height: 24px;
   letter-spacing: -0.5%;
   vertical-align: middle;
+}
+
+.truckListLoadMoreBtn:hover,
+.truckListLoadMoreBtn:focus,
+.truckListLoadMoreBtn:active {
+  border: 1px solid rgba(216, 67, 67, 1);
+  transition: border 0.3s ease-in-out;
 }

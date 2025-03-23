@@ -1,5 +1,5 @@
 import { createSlice, createSelector } from "@reduxjs/toolkit";
-import { getCatalog, getTruck } from "./catalogOperations";
+import { getCatalog, getTruck } from "./truckOperations";
 
 const initialState = {
   items: [],

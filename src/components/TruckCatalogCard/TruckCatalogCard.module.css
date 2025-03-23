@@ -6,17 +6,14 @@
   border-radius: 20px;
 }
 
-.truckCardWrapper {
-}
-
 .truckCardHeaderWrapper {
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
 }
 
-.truckCardImage {
-  width: 320px;
+.truckImage {
+  object-fit: cover;
 }
 
 .truckCardHeader {
@@ -28,7 +25,15 @@
   letter-spacing: 0%;
 }
 
+.truckPriceWrapper {
+  display: flex;
+  gap: 12px;
+}
+
 .truckCardPrice {
+  display: flex;
+  gap: 13px;
+
   font-family: Inter;
   color: rgba(16, 24, 40, 1);
   font-weight: 600;
@@ -69,6 +74,10 @@
 
 .truckCardEquipmentList {
   margin-bottom: 24px;
+
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .truckCardShowMoreButton {
@@ -90,4 +99,7 @@
   line-height: 24px;
   letter-spacing: -0.5%;
   vertical-align: middle;
+}
+.truckCardShowMoreButton:hover {
+  background-color: rgba(216, 67, 67, 1);
 }

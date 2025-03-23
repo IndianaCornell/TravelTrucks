@@ -13,6 +13,13 @@ import {
   Kitchen,
   TV,
   VAN,
+  Gas,
+  Microwave,
+  Petrol,
+  Radio,
+  Refrigerator,
+  Water,
+  Map,
 } from "../../assets/icons";
 
 const Search = ({ onSearch }) => {
@@ -34,11 +41,17 @@ const Search = ({ onSearch }) => {
         <Form className={clsx(css.searchForm)}>
           <div className={clsx(css.searchLocationContainer)}>
             <label className={clsx(css.searchLocationLabel)}>Location</label>
+            <img
+              className={clsx(css.searchIcon)}
+              src={Map}
+              alt="AC Icon"
+              width="20"
+            />
             <Field
               className={clsx(css.searchLocationField)}
               type="text"
               name="query"
-              placeholder="Kiev, Ukraine"
+              placeholder="City"
             />
           </div>
           <div className={clsx(css.searchFiltersContainer)}>
@@ -118,6 +131,92 @@ const Search = ({ onSearch }) => {
                     </span>
                   </div>
                 </label>
+                <label>
+                  <Field
+                    className={clsx(css.searchFiltersCheckBox)}
+                    type="checkbox"
+                    name="equipment"
+                    value="Gas"
+                  />
+                  <div className={clsx(css.filterIconWrapper)}>
+                    <img src={Gas} alt="Gas Icon" width="32" />
+                    <span className={clsx(css.filterIconDescription)}>Gas</span>
+                  </div>
+                </label>
+                <label>
+                  <Field
+                    className={clsx(css.searchFiltersCheckBox)}
+                    type="checkbox"
+                    name="equipment"
+                    value="Microwave"
+                  />
+                  <div className={clsx(css.filterIconWrapper)}>
+                    <img src={Microwave} alt="Microwave Icon" width="32" />
+                    <span className={clsx(css.filterIconDescription)}>
+                      Microwave
+                    </span>
+                  </div>
+                </label>
+                <label>
+                  <Field
+                    className={clsx(css.searchFiltersCheckBox)}
+                    type="checkbox"
+                    name="equipment"
+                    value="Petrol"
+                  />
+                  <div className={clsx(css.filterIconWrapper)}>
+                    <img src={Petrol} alt="Petrol Icon" width="32" />
+                    <span className={clsx(css.filterIconDescription)}>
+                      Petrol
+                    </span>
+                  </div>
+                </label>
+                <label>
+                  <Field
+                    className={clsx(css.searchFiltersCheckBox)}
+                    type="checkbox"
+                    name="equipment"
+                    value="Radio"
+                  />
+                  <div className={clsx(css.filterIconWrapper)}>
+                    <img src={Radio} alt="AC Icon" width="32" />
+                    <span className={clsx(css.filterIconDescription)}>
+                      Radio
+                    </span>
+                  </div>
+                </label>
+                <label>
+                  <Field
+                    className={clsx(css.searchFiltersCheckBox)}
+                    type="checkbox"
+                    name="equipment"
+                    value="Refrigerator"
+                  />
+                  <div className={clsx(css.filterIconWrapper)}>
+                    <img
+                      src={Refrigerator}
+                      alt="Refrigerator Icon"
+                      width="32"
+                    />
+                    <span className={clsx(css.filterIconDescription)}>
+                      Refrigerator
+                    </span>
+                  </div>
+                </label>
+                <label>
+                  <Field
+                    className={clsx(css.searchFiltersCheckBox)}
+                    type="checkbox"
+                    name="equipment"
+                    value="Alcove"
+                  />
+                  <div className={clsx(css.filterIconWrapper)}>
+                    <img src={Water} alt="Water Icon" width="32" />
+                    <span className={clsx(css.filterIconDescription)}>
+                      Water
+                    </span>
+                  </div>
+                </label>
               </div>
             </div>
             <div className={clsx(css.searchFiltersWrapper)}>
@@ -134,7 +233,7 @@ const Search = ({ onSearch }) => {
                     value="Van"
                   />
                   <div className={clsx(css.filterIconWrapper)}>
-                    <img src={Bathroom} alt="AC Icon" width="32" />
+                    <img src={VAN} alt="AC Icon" width="32" />
 
                     <span className={clsx(css.filterIconDescription)}>Van</span>
                   </div>
