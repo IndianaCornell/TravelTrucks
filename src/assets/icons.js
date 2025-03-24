@@ -16,6 +16,7 @@ import Radio from "./Radio.svg";
 import Refrigerator from "./Refrigerator.svg";
 import Water from "./Water.svg";
 import StarEmpty from "./StarEmpty.svg";
+import HeartRed from "./HeartRed.svg";
 
 export {
   Gas,
@@ -36,4 +37,5 @@ export {
   Star,
   Map,
   StarEmpty,
+  HeartRed,
 };

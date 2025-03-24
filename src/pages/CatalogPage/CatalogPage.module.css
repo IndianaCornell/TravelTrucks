@@ -7,3 +7,10 @@
   padding: 48px 20px 52px 20px;
   margin: 0 auto;
 }
+
+.listWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 0 auto;
+}

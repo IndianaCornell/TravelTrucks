@@ -4,11 +4,21 @@ import { Link } from "react-router-dom";
 
 import css from "./TruckCatalogCard.module.css";
 
-import { Star, Map, Heart } from "../../assets/icons";
+import { Star, Map, Heart, HeartRed } from "../../assets/icons";
 
 import TruckFilterItem from "../TruckFilterItem/TruckFilterItem";
+import { useDispatch, useSelector } from "react-redux";
+import { selectFavorites, toggleFavorite } from "../../redux/favoritesSlice";
 
 const TruckCatalogCard = ({ truck }) => {
+  const dispatch = useDispatch();
+  const favorites = useSelector(selectFavorites);
+  const isFavorite = favorites.includes(truck.id);
+
+  const handleFavoriteClick = () => {
+    dispatch(toggleFavorite(truck.id));
+  };
+
   return (
     <div className={clsx(css.truckCard)}>
       <img
@@ -22,10 +32,15 @@ const TruckCatalogCard = ({ truck }) => {
           <h3 className={clsx(css.truckCardHeader)}>{truck.name}</h3>
           <div className={clsx(css.truckPriceWrapper)}>
             <h3 className={clsx(css.truckCardPrice)}>€{truck.price}</h3>
-            <button className={clsx(css.truckHeartButton)}>
+            <button
+              className={clsx(css.truckHeartButton, {
+                [css.activeHeart]: isFavorite,
+              })}
+              onClick={handleFavoriteClick}
+            >
               <img
                 className={clsx(css.truckHeartIcon)}
-                src={Heart}
+                src={isFavorite ? HeartRed : Heart}
                 alt="Heart Icon"
                 width="24"
               />

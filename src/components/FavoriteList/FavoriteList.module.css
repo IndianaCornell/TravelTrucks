@@ -1,0 +1,32 @@
+.favoriteWrapper {
+  background-color: rgba(242, 244, 247, 1);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.favoriteHeader {
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.favoriteList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.favoriteNoTrucks {
+  margin: 0 auto;
+  padding: 10px;
+  background-color: rgba(242, 244, 247, 1);
+  border-radius: 20px;
+}
+
+.favoriteLoadingTrucks {
+  margin: 0 auto;
+  padding: 10px;
+  background-color: rgba(242, 244, 247, 1);
+  border-radius: 20px;
+}

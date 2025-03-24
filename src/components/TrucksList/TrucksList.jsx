@@ -39,17 +39,22 @@ const TrucksList = () => {
     <div className={clsx(css.truckListWrapper)}>
       {isLoading && <ProgressBar />}
       {error && <p>Error: {error}</p>}
-      <ul className={clsx(css.truckList)}>
-        {Array.isArray(trucks?.items) && filtered.length > 0 ? (
-          filtered.slice(0, visibleCount).map((truck) => (
-            <li key={truck.id}>
-              <TruckCatalogCard truck={truck} />
-            </li>
-          ))
-        ) : (
-          <p>No trucks found</p>
-        )}
-      </ul>
+
+      {!isLoading && <h2 className={clsx(css.truckListHeader)}>All trucks</h2>}
+      {!isLoading && (
+        <ul className={clsx(css.truckList)}>
+          {Array.isArray(trucks?.items) && filtered.length > 0 ? (
+            filtered.slice(0, visibleCount).map((truck) => (
+              <li key={truck.id}>
+                <TruckCatalogCard truck={truck} />
+              </li>
+            ))
+          ) : (
+            <p>No trucks found</p>
+          )}
+        </ul>
+      )}
+
       {trucks?.items && visibleCount < filtered.length && (
         <button className={clsx(css.truckListLoadMoreBtn)} onClick={loadMore}>
           Load More

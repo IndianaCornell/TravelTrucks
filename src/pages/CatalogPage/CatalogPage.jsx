@@ -5,12 +5,16 @@ import css from "./CatalogPage.module.css";
 
 import TruckList from "../../components/TrucksList/TrucksList";
 import Search from "../../components/Search/Search";
+import FavoriteList from "../../components/FavoriteList/FavoriteList";
 
 const CatalogPage = () => {
   return (
     <section className={clsx(css.container)}>
       <Search />
-      <TruckList />
+      <div className={clsx(css.listWrapper)}>
+        <FavoriteList />
+        <TruckList />
+      </div>
     </section>
   );
 };
