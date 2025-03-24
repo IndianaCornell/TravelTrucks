@@ -36,7 +36,7 @@ const TruckCatalogCard = ({ truck }) => {
           <span>
             <img src={Star} alt="AC Icon" width="16" />
           </span>
-          {truck.rating}({truck.reviews.length} Reviews)
+          {truck.rating} ({truck.reviews.length} Reviews)
           <span className={clsx(css.truckCardReviewsSpan)}>
             <img src={Map} alt="AC Icon" width="16" />
           </span>

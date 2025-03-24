@@ -18,23 +18,19 @@
 .heroHeader {
   margin-bottom: 16px;
 
-  font-family: Inter;
   color: rgba(247, 247, 247, 1);
   font-weight: 600;
   font-size: 48px;
   line-height: 0.66;
-  letter-spacing: 0%;
 }
 
 .heroDescription {
   margin-bottom: 40px;
 
-  font-family: Inter;
   color: rgba(247, 247, 247, 1);
   font-weight: 600;
   font-size: 24px;
   line-height: 1.33;
-  letter-spacing: 0%;
 }
 
 .heroLink {
@@ -50,10 +46,6 @@
   text-decoration: none;
   transition: background 0.3s ease-in-out;
 
-  font-family: Inter;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
   letter-spacing: -0.5%;
   vertical-align: middle;
 }
